@@ -1,0 +1,2 @@
+module Themes.Dark
+singleton TitleBar 1.0 TitleBar.qml
