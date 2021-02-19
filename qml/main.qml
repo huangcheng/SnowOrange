@@ -1,17 +1,25 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 
-import Themes.Dark 1.0
+import Components 1.0
 
 Window {
+    id: window
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    flags: Qt.Window |
+           Qt.FramelessWindowHint |
+           Qt.WindowMinimizeButtonHint |
+           Qt.WindowSystemMenuHint
 
-    Rectangle {
-        width: parent.width
-        height: parent.height
-        color: TitleBar.mainColor
+    onVisibilityChanged: {
+        if (Window.Minimized !== visibility) {
+            flags = Qt.Window | Qt.FramelessWindowHint
+        }
+    }
+
+    TitleBar {
+        window: window
     }
 }

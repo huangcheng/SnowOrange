@@ -2,5 +2,11 @@
     <qresource prefix="/">
         <file>qml/main.qml</file>
         <file>qml/Themes/Dark/TitleBar.qml</file>
+        <file>qml/Components/TitleBar.qml</file>
+        <file>images/icon_caretdown.png</file>
+        <file>images/icon_close.png</file>
+        <file>images/icon_exchange.png</file>
+        <file>images/icon_maximize.png</file>
+        <file>images/icon_minimize.png</file>
     </qresource>
 </RCC>
