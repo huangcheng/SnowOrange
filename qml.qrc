@@ -8,5 +8,6 @@
         <file>images/icon_exchange.png</file>
         <file>images/icon_maximize.png</file>
         <file>images/icon_minimize.png</file>
+        <file>qml/Themes/Dark/Window.qml</file>
     </qresource>
 </RCC>

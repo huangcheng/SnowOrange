@@ -1,3 +1,4 @@
 module Themes.Dark
 
 singleton TitleBar 1.0 TitleBar.qml
+singleton Window 1.0 Window.qml

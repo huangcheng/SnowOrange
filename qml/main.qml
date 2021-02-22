@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 
 import Components 1.0
+import Themes.Dark as Theme
 
 Window {
     id: window
@@ -12,6 +13,7 @@ Window {
            Qt.FramelessWindowHint |
            Qt.WindowMinimizeButtonHint |
            Qt.WindowSystemMenuHint
+    color: Theme.Window.mainColor
 
     onVisibilityChanged: {
         if (Window.Minimized !== visibility) {

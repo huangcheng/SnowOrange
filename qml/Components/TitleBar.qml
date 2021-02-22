@@ -4,7 +4,7 @@ import Themes.Dark 1.0 as Theme
 
 MouseArea {
     width: parent.width
-    height: 30
+    height: 31
 
     readonly property int buttonWidth: 21
     readonly property int buttonHeight: 21
@@ -12,8 +12,17 @@ MouseArea {
     property var clickPos: Qt.point(0, 0)
 
     Rectangle {
-        anchors.fill: parent
+        width: parent.width
+        height: parent.height - 1
         color: Theme.TitleBar.mainColor
+    }
+
+    Rectangle {
+        width: parent.width
+        height: 1
+        color: Theme.TitleBar.borderColor
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
     }
 
     function maximizeOrRestoreWindow(window) {
@@ -40,7 +49,7 @@ MouseArea {
 
     Rectangle {
         color: Theme.TitleBar.mainColor
-        height: parent.height
+        height: parent.height - 1
         width: children.width
 
         anchors.right: parent.right
