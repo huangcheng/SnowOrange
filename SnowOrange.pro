@@ -12,7 +12,7 @@ SOURCES += \
 RESOURCES += qml.qrc
 
 TRANSLATIONS += \
-    SnowOrange_zh_CN.ts
+    translations/SnowOrange_zh_CN.ts
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH += $$PWD/qml

@@ -1,4 +1,5 @@
 import QtQuick 2.15
+import QtQuick.Controls 2.15
 
 import Themes.Dark 1.0 as Theme
 
@@ -43,8 +44,53 @@ MouseArea {
 
     onPositionChanged: {
         var delta = Qt.point(mouse.x - clickPos.x, mouse.y - clickPos.y)
+
         window.x += delta.x
         window.y += delta.y
+    }
+
+    MenuBar {
+        width: children.width
+        height: parent.height - 1
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        background: Rectangle {
+            color: Theme.TitleBar.mainColor
+        }
+
+        delegate: MenuBarItem {
+            id: menuBarItem
+
+            contentItem: Text {
+                text: menuBarItem.text
+                opacity: enabled ? 1.0 : 0.3
+                color: Theme.TitleBar.titleBarMenuColor
+            }
+
+            background: Rectangle {
+                color: Theme.TitleBar.mainColor
+            }
+        }
+
+        Menu {
+            id: file
+            title: qsTr('File')
+            palette.text: Theme.TitleBar.titleBarMenuColor
+
+            Action {
+                text: "Cut"
+            }
+            Action {
+                text: "Copy"
+            }
+            Action {
+                text: "Paste"
+            }
+        }
+
+        Menu {
+            title: qsTr('Settings')
+        }
     }
 
     Rectangle {
@@ -64,7 +110,7 @@ MouseArea {
 
             Image {
                 anchors.fill: parent
-                source: "qrc:/images/icon_close.png"
+                source: 'qrc:/images/icon_close.png'
             }
 
             onClicked: Qt.quit()
@@ -82,7 +128,7 @@ MouseArea {
                 width: 13
                 height: 11
                 anchors.centerIn: parent
-                source: "qrc:/images/icon_maximize.png"
+                source: 'qrc:/images/icon_maximize.png'
             }
 
             onClicked: maximizeOrRestoreWindow(window)
@@ -100,7 +146,7 @@ MouseArea {
                 width: 12
                 height: 1
                 anchors.centerIn: parent
-                source: "qrc:/images/icon_minimize.png"
+                source: 'qrc:/images/icon_minimize.png'
             }
 
             onClicked: {
